@@ -37,21 +37,21 @@ const date = new Date();
 const phase = getLunarAge(date);
 ```
 
-To get the percentage through the lunar cycle (ex: 0.5602368519132597):
+To get the percentage through the lunar cycle (ex: 0.5602368519132597)
 
 ```js
 const date = new Date();
 const phase = getLunarAgePercent(date);
 ```
 
-Whether the moon is waxing (ex: false):
+Whether the moon is waxing (ex: false)
 
 ```js
 const date = new Date();
 const phase = isWaxing(date);
 ```
 
-Whether the moon is waning (ex: true):
+Whether the moon is waning (ex: true)
 
 ```js
 const date = new Date();
