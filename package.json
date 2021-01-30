@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Calculate phase of the moon using Julian date",
   "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
-  "homepage": "https://github.com/jasonsturges/lunar-phase",
+  "homepage": "https://github.com/jasonsturges/lunarphase-js",
   "license": "ISC",
   "keywords": [
     "astronomy",
