@@ -8,8 +8,6 @@
   "main": "dist/lunar-phase.cjs.js",
   "module": "dist/lunar-phase.esm.js",
   "browser": "dist/lunar-phase.umd.js",
-  "dependencies": {
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
