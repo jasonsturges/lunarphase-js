@@ -53,19 +53,6 @@ export const getLunarAgePercent = (date) => {
 }
 
 /**
- * Normalization utility for percentage calculations.
- *
- * @param {number} value - Percent value.
- */
-const normalize = value => {
-  value = value - Math.floor(value);
-  if (value < 0)
-    value = value + 1
-
-  return value;
-}
-
-/**
  * Name of the lunar phase per date submitted.
  *
  * @param {Date} date - Date used to calculate lunar phase.
@@ -114,4 +101,17 @@ export const isWaxing = (date) => {
 export const isWaning = (date) => {
   const age = getLunarAge(date);
   return age > 14.765;
+}
+
+/**
+ * Normalization utility for percentage calculations.
+ *
+ * @param {number} value - Percent value.
+ */
+const normalize = value => {
+  value = value - Math.floor(value);
+  if (value < 0)
+    value = value + 1
+
+  return value;
 }
