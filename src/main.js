@@ -24,7 +24,7 @@ export const LUNAR_PHASE = {
  * @param {Date} date - Date used for calculation.
  * @return {number} Julian date.
  */
-export const getJulianDate = (date) => {
+export const getJulianDate = (date = new Date()) => {
   const time = date.getTime();
   return (time / 86400000) - (date.getTimezoneOffset() / 1440) + 2440587.5;
 }
@@ -35,7 +35,7 @@ export const getJulianDate = (date) => {
  * @param {Date} date - Date used for calculation.
  * @return {number} Age of the moon, normalized within a 29.53059 Earth days calendar.
  */
-export const getLunarAge = (date) => {
+export const getLunarAge = (date = new Date()) => {
   const percent = getLunarAgePercent(date);
   const age = percent * LUNAR_MONTH;
 
@@ -48,7 +48,7 @@ export const getLunarAge = (date) => {
  * @param {Date} date - Date used for calculation.
  * @return {number} Percentage through the lunar month.
  */
-export const getLunarAgePercent = (date) => {
+export const getLunarAgePercent = (date = new Date()) => {
   return normalize((getJulianDate(date) - 2451550.1) / LUNAR_MONTH);
 }
 
@@ -58,7 +58,7 @@ export const getLunarAgePercent = (date) => {
  * @param {Date} date - Date used to calculate lunar phase.
  * @return {string} Name as string of the current lunar phase.
  */
-export const getLunarPhase = (date) => {
+export const getLunarPhase = (date = new Date()) => {
   const age = getLunarAge(date);
 
   if (age < 1.84566)
@@ -87,7 +87,7 @@ export const getLunarPhase = (date) => {
  * @param {Date} date - Date used for calculation.
  * @return {boolean} True if moon is waxing.
  */
-export const isWaxing = (date) => {
+export const isWaxing = (date = new Date()) => {
   const age = getLunarAge(date);
   return age <= 14.765;
 }
@@ -98,7 +98,7 @@ export const isWaxing = (date) => {
  * @param {Date} date - Date used for calculation.
  * @return {boolean} True if moon is waning.
  */
-export const isWaning = (date) => {
+export const isWaning = (date = new Date()) => {
   const age = getLunarAge(date);
   return age > 14.765;
 }
