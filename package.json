@@ -1,13 +1,19 @@
 {
-  "name": "lunar-phase",
+  "name": "lunarphase-js",
   "version": "1.0.0",
   "description": "Calculate phase of the moon using Julian date",
   "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
   "homepage": "https://github.com/jasonsturges/lunar-phase",
   "license": "ISC",
-  "main": "dist/lunar-phase.cjs.js",
-  "module": "dist/lunar-phase.esm.js",
-  "browser": "dist/lunar-phase.umd.js",
+  "keywords": [
+    "astronomy",
+    "moon",
+    "lunar",
+    "phase"
+  ],
+  "main": "dist/lunarphase-js.cjs.js",
+  "module": "dist/lunarphase-js.esm.js",
+  "browser": "dist/lunarphase-js.umd.js",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
