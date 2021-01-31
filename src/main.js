@@ -7,7 +7,7 @@ const LUNAR_MONTH = 29.530588853;
 /**
  * Enumeration of lunar phases
  */
-export const LUNAR_PHASE = {
+export const LunarPhase = {
   NEW: "New",
   WANING_CRESCENT: "Waning Crescent",
   LAST_QUARTER: "Last Quarter",
@@ -18,7 +18,7 @@ export const LUNAR_PHASE = {
   WAXING_CRESCENT: "Waxing Crescent"
 }
 
-export const LUNAR_PHASE_EMOJI = {
+export const LunarPhaseEmoji = {
   NEW: "🌑",
   WANING_CRESCENT: "🌘",
   LAST_QUARTER: "🌗",
@@ -73,23 +73,23 @@ export const getLunarPhase = (date = new Date()) => {
   const age = getLunarAge(date);
 
   if (age < 1.84566)
-    return LUNAR_PHASE.NEW;
+    return LunarPhase.NEW;
   else if (age < 5.53699)
-    return LUNAR_PHASE.WAXING_CRESCENT;
+    return LunarPhase.WAXING_CRESCENT;
   else if (age < 9.22831)
-    return LUNAR_PHASE.FIRST_QUARTER;
+    return LunarPhase.FIRST_QUARTER;
   else if (age < 12.91963)
-    return LUNAR_PHASE.WAXING_GIBBOUS;
+    return LunarPhase.WAXING_GIBBOUS;
   else if (age < 16.61096)
-    return LUNAR_PHASE.FULL;
+    return LunarPhase.FULL;
   else if (age < 20.30228)
-    return LUNAR_PHASE.WANING_GIBBOUS;
+    return LunarPhase.WANING_GIBBOUS;
   else if (age < 23.99361)
-    return LUNAR_PHASE.LAST_QUARTER;
+    return LunarPhase.LAST_QUARTER;
   else if (age < 27.68493)
-    return LUNAR_PHASE.WANING_CRESCENT;
+    return LunarPhase.WANING_CRESCENT;
 
-  return LUNAR_PHASE.NEW;
+  return LunarPhase.NEW;
 }
 
 /**
@@ -102,23 +102,23 @@ export const getLunarPhaseEmoji = (date = new Date()) => {
   const age = getLunarAge(date);
 
   if (age < 1.84566)
-    return LUNAR_PHASE_EMOJI.NEW;
+    return LunarPhaseEmoji.NEW;
   else if (age < 5.53699)
-    return LUNAR_PHASE_EMOJI.WAXING_CRESCENT;
+    return LunarPhaseEmoji.WAXING_CRESCENT;
   else if (age < 9.22831)
-    return LUNAR_PHASE_EMOJI.FIRST_QUARTER;
+    return LunarPhaseEmoji.FIRST_QUARTER;
   else if (age < 12.91963)
-    return LUNAR_PHASE_EMOJI.WAXING_GIBBOUS;
+    return LunarPhaseEmoji.WAXING_GIBBOUS;
   else if (age < 16.61096)
-    return LUNAR_PHASE_EMOJI.FULL;
+    return LunarPhaseEmoji.FULL;
   else if (age < 20.30228)
-    return LUNAR_PHASE_EMOJI.WANING_GIBBOUS;
+    return LunarPhaseEmoji.WANING_GIBBOUS;
   else if (age < 23.99361)
-    return LUNAR_PHASE_EMOJI.LAST_QUARTER;
+    return LunarPhaseEmoji.LAST_QUARTER;
   else if (age < 27.68493)
-    return LUNAR_PHASE_EMOJI.WANING_CRESCENT;
+    return LunarPhaseEmoji.WANING_CRESCENT;
 
-  return LUNAR_PHASE_EMOJI.NEW;
+  return LunarPhaseEmoji.NEW;
 }
 
 /**
