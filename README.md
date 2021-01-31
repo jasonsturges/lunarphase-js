@@ -9,6 +9,12 @@ To install, execute:
 
     npm i lunarphase-js
 
+Then, import into a project as:
+
+```js
+import * as Moon from 'lunarphase-js';
+```
+
 
 # Usage
 
@@ -26,14 +32,18 @@ Lunar phases in order:
 For a specific date, pass a date object to a function
 
 ```js
+import * as Moon from 'lunarphase-js';
+
 const date = new Date();
-const phase = getLunarPhase(date);
+const phase = Moon.getLunarPhase(date);
 ```
 
 Otherwise, current date will be used
 
 ```js
-const phase = getLunarPhase();
+import * as Moon from 'lunarphase-js';
+
+const phase = Moon.getLunarPhase();
 ```
 
 ### Lunar Phase
