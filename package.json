@@ -1,6 +1,6 @@
 {
   "name": "lunarphase-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Calculate phase of the moon using Julian date",
   "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
   "homepage": "https://github.com/jasonsturges/lunarphase-js",
