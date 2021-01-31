@@ -18,6 +18,17 @@ export const LUNAR_PHASE = {
   WAXING_CRESCENT: "Waxing Crescent"
 }
 
+export const LUNAR_PHASE_EMOJI = {
+  NEW: "🌑",
+  WANING_CRESCENT: "🌘",
+  LAST_QUARTER: "🌗",
+  WANING_GIBBOUS: "🌖",
+  FULL: "🌕",
+  WAXING_GIBBOUS: "🌔",
+  FIRST_QUARTER: "🌓",
+  WAXING_CRESCENT: "🌒"
+}
+
 /**
  * Julian time from date.
  *
@@ -79,6 +90,35 @@ export const getLunarPhase = (date = new Date()) => {
     return LUNAR_PHASE.WANING_CRESCENT;
 
   return LUNAR_PHASE.NEW;
+}
+
+/**
+ * Emoji of the lunar phase per date submitted.
+ *
+ * @param {Date} date - Date used to calculate lunar phase.
+ * @return {string} Name as string of the current lunar phase.
+ */
+export const getLunarPhaseEmoji = (date = new Date()) => {
+  const age = getLunarAge(date);
+
+  if (age < 1.84566)
+    return LUNAR_PHASE_EMOJI.NEW;
+  else if (age < 5.53699)
+    return LUNAR_PHASE_EMOJI.WAXING_CRESCENT;
+  else if (age < 9.22831)
+    return LUNAR_PHASE_EMOJI.FIRST_QUARTER;
+  else if (age < 12.91963)
+    return LUNAR_PHASE_EMOJI.WAXING_GIBBOUS;
+  else if (age < 16.61096)
+    return LUNAR_PHASE_EMOJI.FULL;
+  else if (age < 20.30228)
+    return LUNAR_PHASE_EMOJI.WANING_GIBBOUS;
+  else if (age < 23.99361)
+    return LUNAR_PHASE_EMOJI.LAST_QUARTER;
+  else if (age < 27.68493)
+    return LUNAR_PHASE_EMOJI.WANING_CRESCENT;
+
+  return LUNAR_PHASE_EMOJI.NEW;
 }
 
 /**
