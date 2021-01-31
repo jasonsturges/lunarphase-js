@@ -23,14 +23,14 @@ Lunar phases in order:
 - 🌓 First Quarter
 - 🌒 Waxing Crescent
 
-For a specific date, pass a date object to a function:
+For a specific date, pass a date object to a function
 
 ```js
 const date = new Date();
 const phase = getLunarPhase(date);
 ```
 
-Otherwise, current date will be used:
+Otherwise, current date will be used
 
 ```js
 const phase = getLunarPhase();
