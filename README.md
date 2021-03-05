@@ -51,7 +51,7 @@ const phase = Moon.getLunarPhase();
 To get the current lunar phase from the `LunarPhase` enum (ex: "Full")
 
 ```js
-const phase = getLunarPhase();
+const phase = Moon.getLunarPhase();
 ```
 
 ### Lunar Phase Emoji
@@ -59,7 +59,13 @@ const phase = getLunarPhase();
 To get the current lunar phase emoji from the `LunarPhaseEmoji` enum (ex: "🌕")
 
 ```js
-const phaseEmoji = getLunarPhaseEmoji();
+const phaseEmoji = Moon.getLunarPhaseEmoji();
+```
+
+To get emoji for other lunar phases of the `LunarPhase` enum:
+
+```js
+const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.FULL);
 ```
 
 ### Lunar Age
@@ -67,7 +73,7 @@ const phaseEmoji = getLunarPhaseEmoji();
 To get the lunar age (ex: 16.54412413414952)
 
 ```js
-const age = getLunarAge();
+const age = Moon.getLunarAge();
 ```
 
 ### Lunar Age Percent
@@ -75,7 +81,7 @@ const age = getLunarAge();
 To get the percentage through the lunar cycle (ex: 0.5602368519132597)
 
 ```js
-const agePercent = getLunarAgePercent();
+const agePercent = Moon.getLunarAgePercent();
 ```
 
 ### Waxing
@@ -83,7 +89,7 @@ const agePercent = getLunarAgePercent();
 Whether the moon is waxing (ex: false)
 
 ```js
-const waxing = isWaxing();
+const waxing = Moon.isWaxing();
 ```
 
 ### Waning
@@ -91,7 +97,7 @@ const waxing = isWaxing();
 Whether the moon is waning (ex: true)
 
 ```js
-const waning = isWaning();
+const waning = Moon.isWaning();
 ```
 
 ### Julian Date
@@ -99,5 +105,5 @@ const waning = isWaning();
 To get the current Julian date (ex: 2459244.5972259142)
 
 ```js
-const julianDate = getJulianDate();
+const julianDate = Moon.getJulianDate();
 ```
