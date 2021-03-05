@@ -19,11 +19,8 @@
   ],
   "scripts": {
     "dev": "rollup -c -w",
-    "clean": "rimraf dist",
-    "prebuild": "npm run clean",
     "build": "rollup -c",
-    "prepublishOnly": "npm run build",
-    "publish": "npm publish --access public",
+    "clean": "rimraf dist",
     "jsdoc": "jsdoc -r src/*s -R README.md -d docs"
   },
   "devDependencies": {
