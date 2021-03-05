@@ -99,26 +99,36 @@ export const getLunarPhase = (date = new Date()) => {
  * @return {string} Name as string of the current lunar phase.
  */
 export const getLunarPhaseEmoji = (date = new Date()) => {
-  const age = getLunarAge(date);
+  const phase = getLunarPhase(date);
 
-  if (age < 1.84566)
-    return LunarPhaseEmoji.NEW;
-  else if (age < 5.53699)
-    return LunarPhaseEmoji.WAXING_CRESCENT;
-  else if (age < 9.22831)
-    return LunarPhaseEmoji.FIRST_QUARTER;
-  else if (age < 12.91963)
-    return LunarPhaseEmoji.WAXING_GIBBOUS;
-  else if (age < 16.61096)
-    return LunarPhaseEmoji.FULL;
-  else if (age < 20.30228)
-    return LunarPhaseEmoji.WANING_GIBBOUS;
-  else if (age < 23.99361)
-    return LunarPhaseEmoji.LAST_QUARTER;
-  else if (age < 27.68493)
-    return LunarPhaseEmoji.WANING_CRESCENT;
+  return emojiForLunarPhase(phase);
+}
 
-  return LunarPhaseEmoji.NEW;
+/**
+ * Emoji for specified lunar phase
+ * @param {String} phase - Lunar phase, per the LunarPhase enum
+ */
+export const emojiForLunarPhase = (phase) => {
+  switch (phase) {
+    case LunarPhase.WANING_CRESCENT:
+      return LunarPhaseEmoji.WANING_CRESCENT;
+    case LunarPhase.LAST_QUARTER:
+      return LunarPhaseEmoji.LAST_QUARTER;
+    case LunarPhase.WANING_GIBBOUS:
+      return LunarPhaseEmoji.WANING_GIBBOUS;
+    case LunarPhase.FULL:
+      return LunarPhaseEmoji.FULL;
+    case LunarPhase.WAXING_GIBBOUS:
+      return LunarPhaseEmoji.WAXING_GIBBOUS;
+    case LunarPhase.FIRST_QUARTER:
+      return LunarPhaseEmoji.FIRST_QUARTER;
+    case LunarPhase.WAXING_CRESCENT:
+      return LunarPhaseEmoji.WAXING_CRESCENT;
+
+    default:
+    case LunarPhase.NEW:
+      return LunarPhaseEmoji.NEW;
+  }
 }
 
 /**
