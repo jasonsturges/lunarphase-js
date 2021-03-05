@@ -28,5 +28,8 @@
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
   }
 }
