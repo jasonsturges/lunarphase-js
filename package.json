@@ -11,6 +11,12 @@
     "lunar",
     "phase"
   ],
+  "main": "dist/lunarphase-js.cjs.js",
+  "module": "dist/lunarphase-js.esm.js",
+  "browser": "dist/lunarphase-js.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "rollup -c -w",
     "clean": "rimraf dist",
@@ -25,11 +31,5 @@
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rimraf": "^3.0.2",
     "rollup": "^1.29.0"
-  },
-  "main": "dist/lunarphase-js.cjs.js",
-  "module": "dist/lunarphase-js.esm.js",
-  "browser": "dist/lunarphase-js.umd.js",
-  "files": [
-    "dist"
-  ]
+  }
 }
