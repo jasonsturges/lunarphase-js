@@ -20,13 +20,25 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "clean": "rimraf dist",
-    "jsdoc": "jsdoc -r src/*s -R README.md -d docs"
+    "prebuild:types": "rimraf ./build",
+    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run",
+    "predocs": "rimraf ./docs",
+    "docs": "typedoc src --out docs",
+    "clean": "rimraf ./build ./dist ./docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@microsoft/api-extractor": "^7.15.2",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "eslint": "^7.26.0",
+    "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
-    "rollup": "^1.29.0"
+    "rollup": "^2.48.0",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typedoc": "^0.20.36",
+    "typescript": "^4.2.4"
   }
 }
