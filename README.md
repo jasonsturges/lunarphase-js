@@ -35,7 +35,7 @@ For a specific date, pass a date object to a function
 import * as Moon from 'lunarphase-js';
 
 const date = new Date();
-const phase = Moon.getLunarPhase(date);
+const phase = Moon.lunarPhase(date);
 ```
 
 Otherwise, current date will be used
@@ -43,7 +43,7 @@ Otherwise, current date will be used
 ```js
 import * as Moon from 'lunarphase-js';
 
-const phase = Moon.getLunarPhase();
+const phase = Moon.lunarPhase();
 ```
 
 ### Lunar Phase
@@ -51,7 +51,7 @@ const phase = Moon.getLunarPhase();
 To get the current lunar phase from the `LunarPhase` enum (ex: "Full")
 
 ```js
-const phase = Moon.getLunarPhase();
+const phase = Moon.lunarPhase();
 ```
 
 ### Lunar Phase Emoji
@@ -59,7 +59,7 @@ const phase = Moon.getLunarPhase();
 To get the current lunar phase emoji from the `LunarPhaseEmoji` enum (ex: "🌕")
 
 ```js
-const phaseEmoji = Moon.getLunarPhaseEmoji();
+const phaseEmoji = Moon.lunarPhaseEmoji();
 ```
 
 To get emoji for other lunar phases of the `LunarPhase` enum:
@@ -73,7 +73,7 @@ const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.Full);
 To get the lunar age (ex: 16.54412413414952)
 
 ```js
-const age = Moon.getLunarAge();
+const age = Moon.lunarAge();
 ```
 
 ### Lunar Age Percent
@@ -81,7 +81,7 @@ const age = Moon.getLunarAge();
 To get the percentage through the lunar cycle (ex: 0.5602368519132597)
 
 ```js
-const agePercent = Moon.getLunarAgePercent();
+const agePercent = Moon.lunarAgePercent();
 ```
 
 ### Waxing

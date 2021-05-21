@@ -14,8 +14,8 @@ export module Moon {
    * @param date - Date used for calculation.
    * @returns Age of the moon, normalized within a 29.53059 Earth days calendar.
    */
-  export const getLunarAge = (date: Date = new Date()): number => {
-    const percent: number = getLunarAgePercent(date);
+  export const lunarAge = (date: Date = new Date()): number => {
+    const percent: number = lunarAgePercent(date);
     return percent * LUNAR_MONTH;
   };
 
@@ -25,7 +25,7 @@ export module Moon {
    * @param date - Date used for calculation.
    * @returns Percentage through the lunar month.
    */
-  export const getLunarAgePercent = (date: Date = new Date()): number => {
+  export const lunarAgePercent = (date: Date = new Date()): number => {
     return normalize((JulianDate.fromDate(date) - 2451550.1) / LUNAR_MONTH);
   };
 
@@ -35,8 +35,8 @@ export module Moon {
    * @param date - Date used to calculate lunar phase.
    * @returns Name as string of the current lunar phase.
    */
-  export const getLunarPhase = (date: Date = new Date()): LunarPhase => {
-    const age = getLunarAge(date);
+  export const lunarPhase = (date: Date = new Date()): LunarPhase => {
+    const age = lunarAge(date);
 
     if (age < 1.84566) return LunarPhase.New;
     else if (age < 5.53699) return LunarPhase.WaxingCrescent;
@@ -56,10 +56,10 @@ export module Moon {
    * @param date - Date used to calculate lunar phase.
    * @returns Emoji of the current lunar phase.
    */
-  export const getLunarPhaseEmoji = (
+  export const lunarPhaseEmoji = (
     date: Date = new Date()
   ): LunarPhaseEmoji => {
-    const phase: LunarPhase = getLunarPhase(date);
+    const phase: LunarPhase = lunarPhase(date);
 
     return emojiForLunarPhase(phase);
   };
@@ -100,7 +100,7 @@ export module Moon {
    * @returns True if moon is waxing.
    */
   export const isWaxing = (date: Date = new Date()): boolean => {
-    const age: number = getLunarAge(date);
+    const age: number = lunarAge(date);
     return age <= 14.765;
   };
 
@@ -111,7 +111,7 @@ export module Moon {
    * @returns True if moon is waning.
    */
   export const isWaning = (date: Date = new Date()): boolean => {
-    const age: number = getLunarAge(date);
+    const age: number = lunarAge(date);
     return age > 14.765;
   };
 
