@@ -9,7 +9,8 @@ export module Moon {
   const LUNAR_MONTH: number = 29.530588853;
 
   /**
-   * Lunar age, normalized within a 29.53059 Earth days calendar.
+   * Moon's age, or days since the last new moon
+   * normalized within a 29.53059 Earth days calendar.
    *
    * @param date - Date used for calculation.
    * @returns Age of the moon, normalized within a 29.53059 Earth days calendar.
@@ -20,7 +21,7 @@ export module Moon {
   };
 
   /**
-   * Percentage through the lunar month.
+   * Percentage through the lunar synodic month.
    *
    * @param date - Date used for calculation.
    * @returns Percentage through the lunar month.
