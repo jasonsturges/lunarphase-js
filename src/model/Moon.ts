@@ -38,16 +38,16 @@ export module Moon {
   export const getLunarPhase = (date: Date = new Date()): LunarPhase => {
     const age = getLunarAge(date);
 
-    if (age < 1.84566) return LunarPhase.NEW;
-    else if (age < 5.53699) return LunarPhase.WAXING_CRESCENT;
-    else if (age < 9.22831) return LunarPhase.FIRST_QUARTER;
-    else if (age < 12.91963) return LunarPhase.WAXING_GIBBOUS;
-    else if (age < 16.61096) return LunarPhase.FULL;
-    else if (age < 20.30228) return LunarPhase.WANING_GIBBOUS;
-    else if (age < 23.99361) return LunarPhase.LAST_QUARTER;
-    else if (age < 27.68493) return LunarPhase.WANING_CRESCENT;
+    if (age < 1.84566) return LunarPhase.New;
+    else if (age < 5.53699) return LunarPhase.WaxingCrescent;
+    else if (age < 9.22831) return LunarPhase.FirstQuarter;
+    else if (age < 12.91963) return LunarPhase.WaxingGibbous;
+    else if (age < 16.61096) return LunarPhase.Full;
+    else if (age < 20.30228) return LunarPhase.WaningGibbous;
+    else if (age < 23.99361) return LunarPhase.LastQuarter;
+    else if (age < 27.68493) return LunarPhase.WaningCrescent;
 
-    return LunarPhase.NEW;
+    return LunarPhase.New;
   };
 
   /**
@@ -72,24 +72,24 @@ export module Moon {
    */
   export const emojiForLunarPhase = (phase: LunarPhase): LunarPhaseEmoji => {
     switch (phase) {
-      case LunarPhase.WANING_CRESCENT:
-        return LunarPhaseEmoji.WANING_CRESCENT;
-      case LunarPhase.LAST_QUARTER:
-        return LunarPhaseEmoji.LAST_QUARTER;
-      case LunarPhase.WANING_GIBBOUS:
-        return LunarPhaseEmoji.WANING_GIBBOUS;
-      case LunarPhase.FULL:
-        return LunarPhaseEmoji.FULL;
-      case LunarPhase.WAXING_GIBBOUS:
-        return LunarPhaseEmoji.WAXING_GIBBOUS;
-      case LunarPhase.FIRST_QUARTER:
-        return LunarPhaseEmoji.FIRST_QUARTER;
-      case LunarPhase.WAXING_CRESCENT:
-        return LunarPhaseEmoji.WAXING_CRESCENT;
+      case LunarPhase.WaningCrescent:
+        return LunarPhaseEmoji.WaningCrescent;
+      case LunarPhase.LastQuarter:
+        return LunarPhaseEmoji.LastQuarter;
+      case LunarPhase.WaningGibbous:
+        return LunarPhaseEmoji.WaningGibbous;
+      case LunarPhase.Full:
+        return LunarPhaseEmoji.Full;
+      case LunarPhase.WaxingGibbous:
+        return LunarPhaseEmoji.WaxingGibbous;
+      case LunarPhase.FirstQuarter:
+        return LunarPhaseEmoji.FirstQuarter;
+      case LunarPhase.WaxingCrescent:
+        return LunarPhaseEmoji.WaxingCrescent;
 
       default:
-      case LunarPhase.NEW:
-        return LunarPhaseEmoji.NEW;
+      case LunarPhase.New:
+        return LunarPhaseEmoji.New;
     }
   };
 

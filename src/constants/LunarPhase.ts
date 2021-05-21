@@ -2,12 +2,12 @@
  * Enumeration of lunar phases
  */
 export enum LunarPhase {
-  NEW = "New",
-  WANING_CRESCENT = "Waning Crescent",
-  LAST_QUARTER = "Last Quarter",
-  WANING_GIBBOUS = "Waning Gibbous",
-  FULL = "Full",
-  WAXING_GIBBOUS = "Waxing Gibbous",
-  FIRST_QUARTER = "First Quarter",
-  WAXING_CRESCENT = "Waxing Crescent",
+  New = "New",
+  WaningCrescent = "Waning Crescent",
+  LastQuarter = "Last Quarter",
+  WaningGibbous = "Waning Gibbous",
+  Full = "Full",
+  WaxingGibbous = "Waxing Gibbous",
+  FirstQuarter = "First Quarter",
+  WaxingCrescent = "Waxing Crescent",
 }

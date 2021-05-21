@@ -65,7 +65,7 @@ const phaseEmoji = Moon.getLunarPhaseEmoji();
 To get emoji for other lunar phases of the `LunarPhase` enum:
 
 ```js
-const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.FULL);
+const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.Full);
 ```
 
 ### Lunar Age
