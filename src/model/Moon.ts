@@ -1,23 +1,18 @@
+import { LunarMonth } from "../constants/LunarMonth";
 import { LunarPhase } from "../constants/LunarPhase";
 import { LunarPhaseEmoji } from "../constants/LunarPhaseEmoji";
 import { JulianDay } from "./JulianDay";
 
 export module Moon {
   /**
-   * Time between two identical syzygies, equivalent of 29.53059 Earth days.
-   */
-  const LUNAR_MONTH: number = 29.530588853;
-
-  /**
-   * Moon's age, or days since the last new moon
-   * normalized within a 29.53059 Earth days calendar.
+   * Moon's age, or days since the last new moon.
    *
    * @param date - Date used for calculation.
    * @returns Age of the moon, normalized within a 29.53059 Earth days calendar.
    */
   export const lunarAge = (date: Date = new Date()): number => {
     const percent: number = lunarAgePercent(date);
-    return percent * LUNAR_MONTH;
+    return percent * LunarMonth.length;
   };
 
   /**
@@ -27,7 +22,9 @@ export module Moon {
    * @returns Percentage through the lunar month.
    */
   export const lunarAgePercent = (date: Date = new Date()): number => {
-    return normalize((JulianDay.fromDate(date) - 2451550.1) / LUNAR_MONTH);
+    return normalize(
+      (JulianDay.fromDate(date) - 2451550.1) / LunarMonth.length
+    );
   };
 
   /**
