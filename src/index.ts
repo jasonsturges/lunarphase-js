@@ -15,8 +15,8 @@ export const LunarPhase = {
   FULL: "Full",
   WAXING_GIBBOUS: "Waxing Gibbous",
   FIRST_QUARTER: "First Quarter",
-  WAXING_CRESCENT: "Waxing Crescent"
-}
+  WAXING_CRESCENT: "Waxing Crescent",
+};
 
 export const LunarPhaseEmoji = {
   NEW: "🌑",
@@ -26,8 +26,8 @@ export const LunarPhaseEmoji = {
   FULL: "🌕",
   WAXING_GIBBOUS: "🌔",
   FIRST_QUARTER: "🌓",
-  WAXING_CRESCENT: "🌒"
-}
+  WAXING_CRESCENT: "🌒",
+};
 
 /**
  * Julian time from date.
@@ -37,8 +37,8 @@ export const LunarPhaseEmoji = {
  */
 export const getJulianDate = (date = new Date()) => {
   const time = date.getTime();
-  return (time / 86400000) - (date.getTimezoneOffset() / 1440) + 2440587.5;
-}
+  return time / 86400000 - date.getTimezoneOffset() / 1440 + 2440587.5;
+};
 
 /**
  * Lunar age, normalized within a 29.53059 Earth days calendar.
@@ -51,7 +51,7 @@ export const getLunarAge = (date = new Date()) => {
   const age = percent * LUNAR_MONTH;
 
   return age;
-}
+};
 
 /**
  * Percentage through the lunar month.
@@ -61,7 +61,7 @@ export const getLunarAge = (date = new Date()) => {
  */
 export const getLunarAgePercent = (date = new Date()) => {
   return normalize((getJulianDate(date) - 2451550.1) / LUNAR_MONTH);
-}
+};
 
 /**
  * Name of the lunar phase per date submitted.
@@ -72,25 +72,17 @@ export const getLunarAgePercent = (date = new Date()) => {
 export const getLunarPhase = (date = new Date()) => {
   const age = getLunarAge(date);
 
-  if (age < 1.84566)
-    return LunarPhase.NEW;
-  else if (age < 5.53699)
-    return LunarPhase.WAXING_CRESCENT;
-  else if (age < 9.22831)
-    return LunarPhase.FIRST_QUARTER;
-  else if (age < 12.91963)
-    return LunarPhase.WAXING_GIBBOUS;
-  else if (age < 16.61096)
-    return LunarPhase.FULL;
-  else if (age < 20.30228)
-    return LunarPhase.WANING_GIBBOUS;
-  else if (age < 23.99361)
-    return LunarPhase.LAST_QUARTER;
-  else if (age < 27.68493)
-    return LunarPhase.WANING_CRESCENT;
+  if (age < 1.84566) return LunarPhase.NEW;
+  else if (age < 5.53699) return LunarPhase.WAXING_CRESCENT;
+  else if (age < 9.22831) return LunarPhase.FIRST_QUARTER;
+  else if (age < 12.91963) return LunarPhase.WAXING_GIBBOUS;
+  else if (age < 16.61096) return LunarPhase.FULL;
+  else if (age < 20.30228) return LunarPhase.WANING_GIBBOUS;
+  else if (age < 23.99361) return LunarPhase.LAST_QUARTER;
+  else if (age < 27.68493) return LunarPhase.WANING_CRESCENT;
 
   return LunarPhase.NEW;
-}
+};
 
 /**
  * Emoji of the lunar phase per date submitted.
@@ -102,13 +94,13 @@ export const getLunarPhaseEmoji = (date = new Date()) => {
   const phase = getLunarPhase(date);
 
   return emojiForLunarPhase(phase);
-}
+};
 
 /**
  * Emoji for specified lunar phase
  * @param {String} phase - Lunar phase, per the LunarPhase enum
  */
-export const emojiForLunarPhase = (phase) => {
+export const emojiForLunarPhase = (phase: string) => {
   switch (phase) {
     case LunarPhase.WANING_CRESCENT:
       return LunarPhaseEmoji.WANING_CRESCENT;
@@ -129,7 +121,7 @@ export const emojiForLunarPhase = (phase) => {
     case LunarPhase.NEW:
       return LunarPhaseEmoji.NEW;
   }
-}
+};
 
 /**
  * Whether the moon is currently waxing (growing).
@@ -140,7 +132,7 @@ export const emojiForLunarPhase = (phase) => {
 export const isWaxing = (date = new Date()) => {
   const age = getLunarAge(date);
   return age <= 14.765;
-}
+};
 
 /**
  * Whether the moon is currently waning (shrinking).
@@ -151,17 +143,16 @@ export const isWaxing = (date = new Date()) => {
 export const isWaning = (date = new Date()) => {
   const age = getLunarAge(date);
   return age > 14.765;
-}
+};
 
 /**
  * Normalization utility for percentage calculations.
  *
  * @param {number} value - Percent value.
  */
-const normalize = value => {
+const normalize = (value: number) => {
   value = value - Math.floor(value);
-  if (value < 0)
-    value = value + 1
+  if (value < 0) value = value + 1;
 
   return value;
-}
+};
