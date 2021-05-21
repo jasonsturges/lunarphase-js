@@ -1,4 +1,4 @@
-export module JulianDate {
+export module JulianDay {
   /**
    * Julian day from Gregorian date.
    * @param date - Gregorian date to convert to Julian day.

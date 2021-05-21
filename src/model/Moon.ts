@@ -1,6 +1,6 @@
 import { LunarPhase } from "../constants/LunarPhase";
 import { LunarPhaseEmoji } from "../constants/LunarPhaseEmoji";
-import { JulianDate } from "./JulianDate";
+import { JulianDay } from "./JulianDay";
 
 export module Moon {
   /**
@@ -26,7 +26,7 @@ export module Moon {
    * @returns Percentage through the lunar month.
    */
   export const lunarAgePercent = (date: Date = new Date()): number => {
-    return normalize((JulianDate.fromDate(date) - 2451550.1) / LUNAR_MONTH);
+    return normalize((JulianDay.fromDate(date) - 2451550.1) / LUNAR_MONTH);
   };
 
   /**
@@ -56,9 +56,7 @@ export module Moon {
    * @param date - Date used to calculate lunar phase.
    * @returns Emoji of the current lunar phase.
    */
-  export const lunarPhaseEmoji = (
-    date: Date = new Date()
-  ): LunarPhaseEmoji => {
+  export const lunarPhaseEmoji = (date: Date = new Date()): LunarPhaseEmoji => {
     const phase: LunarPhase = lunarPhase(date);
 
     return emojiForLunarPhase(phase);
