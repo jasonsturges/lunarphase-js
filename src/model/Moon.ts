@@ -1,7 +1,9 @@
+import { EmojiNorthernHemisphere } from "../constants/EmojiNorthernHemisphere";
+import { EmojiSouthernHemisphere } from "../constants/EmojiSouthernHemisphere";
+import { Hemisphere } from "../constants/Hemisphere";
+import { JulianDay } from "./JulianDay";
 import { LunarMonth } from "../constants/LunarMonth";
 import { LunarPhase } from "../constants/LunarPhase";
-import { LunarPhaseEmoji } from "../constants/LunarPhaseEmoji";
-import { JulianDay } from "./JulianDay";
 
 export module Moon {
   /**
@@ -52,40 +54,56 @@ export module Moon {
    * Emoji of the lunar phase per date submitted.
    *
    * @param date - Date used to calculate lunar phase.
+   * @param hemisphere - Northern or Southern hemisphere.
    * @returns Emoji of the current lunar phase.
    */
-  export const lunarPhaseEmoji = (date: Date = new Date()): LunarPhaseEmoji => {
+  export const lunarPhaseEmoji = (
+    date: Date = new Date(),
+    hemisphere: Hemisphere = Hemisphere.Northern
+  ): string => {
     const phase: LunarPhase = lunarPhase(date);
 
-    return emojiForLunarPhase(phase);
+    return emojiForLunarPhase(phase, hemisphere);
   };
 
   /**
    * Emoji for specified lunar phase
    *
    * @param phase - Lunar phase, per the LunarPhase enum
+   * @param hemisphere - Northern or Southern hemisphere.
    * @returns Emoji of the current lunar phase.
    */
-  export const emojiForLunarPhase = (phase: LunarPhase): LunarPhaseEmoji => {
+  export const emojiForLunarPhase = (
+    phase: LunarPhase,
+    hemisphere: Hemisphere = Hemisphere.Northern
+  ): string => {
+    let emoji: any;
+
+    if (hemisphere === Hemisphere.Southern) {
+      emoji = EmojiSouthernHemisphere;
+    } else {
+      emoji = EmojiNorthernHemisphere;
+    }
+
     switch (phase) {
       case LunarPhase.WaningCrescent:
-        return LunarPhaseEmoji.WaningCrescent;
+        return emoji["WaningCrescent"];
       case LunarPhase.LastQuarter:
-        return LunarPhaseEmoji.LastQuarter;
+        return emoji["LastQuarter"];
       case LunarPhase.WaningGibbous:
-        return LunarPhaseEmoji.WaningGibbous;
+        return emoji["WaningGibbous"];
       case LunarPhase.Full:
-        return LunarPhaseEmoji.Full;
+        return emoji["Full"];
       case LunarPhase.WaxingGibbous:
-        return LunarPhaseEmoji.WaxingGibbous;
+        return emoji["WaxingGibbous"];
       case LunarPhase.FirstQuarter:
-        return LunarPhaseEmoji.FirstQuarter;
+        return emoji["FirstQuarter"];
       case LunarPhase.WaxingCrescent:
-        return LunarPhaseEmoji.WaxingCrescent;
+        return emoji["WaxingCrescent"];
 
       default:
       case LunarPhase.New:
-        return LunarPhaseEmoji.New;
+        return emoji["New"];
     }
   };
 

@@ -3,11 +3,11 @@
  */
 export enum LunarPhase {
   New = "New",
-  WaningCrescent = "Waning Crescent",
-  LastQuarter = "Last Quarter",
-  WaningGibbous = "Waning Gibbous",
-  Full = "Full",
-  WaxingGibbous = "Waxing Gibbous",
-  FirstQuarter = "First Quarter",
   WaxingCrescent = "Waxing Crescent",
+  FirstQuarter = "First Quarter",
+  WaxingGibbous = "Waxing Gibbous",
+  Full = "Full",
+  WaningGibbous = "Waning Gibbous",
+  LastQuarter = "Last Quarter",
+  WaningCrescent = "Waning Crescent",
 }
