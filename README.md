@@ -18,16 +18,18 @@ import * as Moon from 'lunarphase-js';
 
 # Usage
 
-Lunar phases in order:
+In the lunar calendar there are 8 phases per cycle each synodic month, shown in order:
 
-- 🌑 New
-- 🌘 Waning Crescent
-- 🌗 Last Quarter
-- 🌖 Waning Gibbous
-- 🌕 Full
-- 🌔 Waxing Gibbous
-- 🌓 First Quarter
-- 🌒 Waxing Crescent
+| Phase | Northern Hemisphere | Southern Hemisphere  |
+| ------- | ------- | ------ |
+| New | 🌑 | 🌑 |
+| Waxing Crescent | 🌒 | 🌘 |
+| First Quarter | 🌓 |🌗 |
+| Waxing Gibbous | 🌔 | 🌖 |
+| Full | 🌕 | 🌕 |
+| Waning Gibbous | 🌖 | 🌔 |
+| Last Quarter | 🌗 | 🌓 |
+| Waning Crescent | 🌘 | 🌒 |
 
 For a specific date, pass a date object to a function
 
