@@ -1,7 +1,10 @@
 /**
- * Enumeration of lunar phases as emoji for the Northern Hemisphere.
+ * Enumeration of lunar phases as emoji.
  */
 export module LunarEmoji {
+  /**
+   * Enumeration of lunar phases as emoji for the Northern Hemisphere.
+   */
   export enum NorthernHemisphere {
     New = "🌑",
     WaxingCrescent = "🌒",
