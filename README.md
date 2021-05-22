@@ -33,6 +33,32 @@ Lunar phases, in order:
 | Last Quarter    | 🌗                  | 🌓                  |
 | Waning Crescent | 🌘                  | 🌒                  |
 
+## Julian Day
+
+Convert to and from Gregorian Dates to Julian Days via the `JulianDay` module.
+
+To convert a date to Julian Day:
+
+```js
+import { JulianDay } from "lunarphase-js";
+
+const date = new Date();
+const julian = JulianDay.fromDate(date);
+```
+
+To convert a Julian Day to a date:
+
+```js
+import { JulianDay } from "lunarphase-js";
+
+const julian = 2459356.529302257;
+const date = JulianDay.toDate(julian);
+```
+
+
+## Lunar Phases
+
+
 For a specific date, pass a date object to a function
 
 ```js
