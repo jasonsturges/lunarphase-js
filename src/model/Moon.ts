@@ -24,9 +24,7 @@ export module Moon {
    * @returns Percentage through the lunar month.
    */
   export const lunarAgePercent = (date: Date = new Date()): number => {
-    return normalize(
-      (JulianDay.fromDate(date) - 2451550.1) / LunarMonth.length
-    );
+    return normalize((JulianDay.fromDate(date) - 2451550.1) / LunarMonth.length);
   };
 
   /**
@@ -57,10 +55,7 @@ export module Moon {
    * @param hemisphere - Northern or Southern hemisphere.
    * @returns Emoji of the current lunar phase.
    */
-  export const lunarPhaseEmoji = (
-    date: Date = new Date(),
-    hemisphere: Hemisphere = Hemisphere.Northern
-  ): string => {
+  export const lunarPhaseEmoji = (date: Date = new Date(), hemisphere: Hemisphere = Hemisphere.Northern): string => {
     const phase: LunarPhase = lunarPhase(date);
 
     return emojiForLunarPhase(phase, hemisphere);
@@ -73,10 +68,7 @@ export module Moon {
    * @param hemisphere - Northern or Southern hemisphere.
    * @returns Emoji of the current lunar phase.
    */
-  export const emojiForLunarPhase = (
-    phase: LunarPhase,
-    hemisphere: Hemisphere = Hemisphere.Northern
-  ): string => {
+  export const emojiForLunarPhase = (phase: LunarPhase, hemisphere: Hemisphere = Hemisphere.Northern): string => {
     let emoji: any;
 
     if (hemisphere === Hemisphere.Southern) {
