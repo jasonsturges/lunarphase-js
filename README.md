@@ -109,3 +109,11 @@ To get the current Julian date (ex: 2459244.5972259142)
 ```js
 const julianDate = Moon.getJulianDate();
 ```
+
+### Lunation Number
+
+Brown Lunation Number (BLN), per Ernest William Brown's lunar theory, defining Lunation 1 as the first new moon of 1923 at approximately 02:41 UTC, January 17, 1923
+
+```js
+const lunationNumber = Moon.lunationNumber()
+```
