@@ -37,14 +37,14 @@ export module Moon {
   export const lunarPhase = (date: Date = new Date()): LunarPhase => {
     const age = lunarAge(date);
 
-    if (age < 1.84566) return LunarPhase.New;
-    else if (age < 5.53699) return LunarPhase.WaxingCrescent;
-    else if (age < 9.22831) return LunarPhase.FirstQuarter;
-    else if (age < 12.91963) return LunarPhase.WaxingGibbous;
-    else if (age < 16.61096) return LunarPhase.Full;
-    else if (age < 20.30228) return LunarPhase.WaningGibbous;
-    else if (age < 23.99361) return LunarPhase.LastQuarter;
-    else if (age < 27.68493) return LunarPhase.WaningCrescent;
+    if (age < 1.84566173161) return LunarPhase.New;
+    else if (age < 5.53698519483) return LunarPhase.WaxingCrescent;
+    else if (age < 9.22830865805) return LunarPhase.FirstQuarter;
+    else if (age < 12.91963212127) return LunarPhase.WaxingGibbous;
+    else if (age < 16.61095558449) return LunarPhase.Full;
+    else if (age < 20.30227904771) return LunarPhase.WaningGibbous;
+    else if (age < 23.99360251093) return LunarPhase.LastQuarter;
+    else if (age < 27.53058770576) return LunarPhase.WaningCrescent;
 
     return LunarPhase.New;
   };
