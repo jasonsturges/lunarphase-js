@@ -1,5 +1,5 @@
 /**
- * Enumeration of lunar phases as emoji for the southern hemisphere.
+ * Enumeration of lunar phases as emoji for the Southern Hemisphere.
  */
 export enum EmojiSouthernHemisphere {
   New = "🌑",

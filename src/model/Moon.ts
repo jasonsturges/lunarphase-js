@@ -52,7 +52,7 @@ export module Moon {
    * Emoji of the lunar phase per date submitted.
    *
    * @param date - Date used to calculate lunar phase.
-   * @param hemisphere - Northern or Southern hemisphere.
+   * @param hemisphere - Northern or Southern Hemisphere.
    * @returns Emoji of the current lunar phase.
    */
   export const lunarPhaseEmoji = (date: Date = new Date(), hemisphere: Hemisphere = Hemisphere.Northern): string => {
@@ -65,7 +65,7 @@ export module Moon {
    * Emoji for specified lunar phase
    *
    * @param phase - Lunar phase, per the LunarPhase enum
-   * @param hemisphere - Northern or Southern hemisphere.
+   * @param hemisphere - Northern or Southern Hemisphere.
    * @returns Emoji of the current lunar phase.
    */
   export const emojiForLunarPhase = (phase: LunarPhase, hemisphere: Hemisphere = Hemisphere.Northern): string => {
