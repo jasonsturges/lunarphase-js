@@ -1,7 +1,6 @@
-import { EmojiNorthernHemisphere } from "../constants/EmojiNorthernHemisphere";
-import { EmojiSouthernHemisphere } from "../constants/EmojiSouthernHemisphere";
 import { Hemisphere } from "../constants/Hemisphere";
 import { JulianDay } from "./JulianDay";
+import { LunarEmoji } from "../constants/LunarEmoji";
 import { LunarMonth } from "../constants/LunarMonth";
 import { LunarPhase } from "../constants/LunarPhase";
 import { LunationNumber } from "../constants/LunationNumber";
@@ -84,9 +83,9 @@ export module Moon {
     let emoji: any;
 
     if (hemisphere === Hemisphere.Southern) {
-      emoji = EmojiSouthernHemisphere;
+      emoji = LunarEmoji.NorthernHemisphere;
     } else {
-      emoji = EmojiNorthernHemisphere;
+      emoji = LunarEmoji.SouthernHemisphere;
     }
 
     switch (phase) {

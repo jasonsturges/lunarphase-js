@@ -1,5 +1,4 @@
-export { EmojiNorthernHemisphere } from "./constants/EmojiNorthernHemisphere";
-export { EmojiSouthernHemisphere } from "./constants/EmojiSouthernHemisphere";
+export { LunarEmoji } from "./constants/LunarEmoji";
 export { Hemisphere } from "./constants/Hemisphere";
 export { JulianDay } from "./model/JulianDay";
 export { LunarMonth } from "./constants/LunarMonth";
