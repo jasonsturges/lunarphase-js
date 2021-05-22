@@ -12,7 +12,7 @@ To install, execute:
 Then, import into a project as:
 
 ```js
-import * as Moon from 'lunarphase-js';
+import * as Moon from "lunarphase-js";
 ```
 
 
@@ -20,21 +20,21 @@ import * as Moon from 'lunarphase-js';
 
 In the lunar calendar there are 8 phases per cycle each synodic month, shown in order:
 
-| Phase | Northern Hemisphere | Southern Hemisphere  |
-| ------- | ------- | ------ |
-| New | 🌑 | 🌑 |
-| Waxing Crescent | 🌒 | 🌘 |
-| First Quarter | 🌓 |🌗 |
-| Waxing Gibbous | 🌔 | 🌖 |
-| Full | 🌕 | 🌕 |
-| Waning Gibbous | 🌖 | 🌔 |
-| Last Quarter | 🌗 | 🌓 |
-| Waning Crescent | 🌘 | 🌒 |
+| Phase           | Northern Hemisphere | Southern Hemisphere |
+| --------------- | ------------------- | ------------------- |
+| New             | 🌑                  | 🌑                  |
+| Waxing Crescent | 🌒                  | 🌘                  |
+| First Quarter   | 🌓                  | 🌗                  |
+| Waxing Gibbous  | 🌔                  | 🌖                  |
+| Full            | 🌕                  | 🌕                  |
+| Waning Gibbous  | 🌖                  | 🌔                  |
+| Last Quarter    | 🌗                  | 🌓                  |
+| Waning Crescent | 🌘                  | 🌒                  |
 
 For a specific date, pass a date object to a function
 
 ```js
-import * as Moon from 'lunarphase-js';
+import * as Moon from "lunarphase-js";
 
 const date = new Date();
 const phase = Moon.lunarPhase(date);
@@ -43,7 +43,7 @@ const phase = Moon.lunarPhase(date);
 Otherwise, current date will be used
 
 ```js
-import * as Moon from 'lunarphase-js';
+import * as Moon from "lunarphase-js";
 
 const phase = Moon.lunarPhase();
 ```
@@ -115,5 +115,5 @@ const julianDate = Moon.getJulianDate();
 Brown Lunation Number (BLN), per Ernest William Brown's lunar theory, defining Lunation 1 as the first new moon of 1923 at approximately 02:41 UTC, January 17, 1923
 
 ```js
-const lunationNumber = Moon.lunationNumber()
+const lunationNumber = Moon.lunationNumber();
 ```
