@@ -12,13 +12,15 @@ To install, execute:
 Then, import into a project as:
 
 ```js
-import * as Moon from "lunarphase-js";
+import { Moon } from "lunarphase-js";
 ```
 
 
 # Usage
 
-In the lunar calendar there are 8 phases per cycle each synodic month, shown in order:
+In the lunar calendar there are 8 phases each synodic month, which is the number of days to complete the cycle.  This time between two identical syzygies is equivalent to 29.53059 Earth days.
+
+Lunar phases, in order:
 
 | Phase           | Northern Hemisphere | Southern Hemisphere |
 | --------------- | ------------------- | ------------------- |
