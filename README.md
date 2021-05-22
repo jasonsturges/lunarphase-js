@@ -34,7 +34,7 @@ In the lunar calendar there are 8 phases per cycle each synodic month, shown in 
 For a specific date, pass a date object to a function
 
 ```js
-import * as Moon from "lunarphase-js";
+import { Moon } from "lunarphase-js";
 
 const date = new Date();
 const phase = Moon.lunarPhase(date);
@@ -43,7 +43,7 @@ const phase = Moon.lunarPhase(date);
 Otherwise, current date will be used
 
 ```js
-import * as Moon from "lunarphase-js";
+import { Moon } from "lunarphase-js";
 
 const phase = Moon.lunarPhase();
 ```
