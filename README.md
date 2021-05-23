@@ -86,17 +86,38 @@ const phase = Moon.lunarPhase();
 
 ### Lunar Phase Emoji
 
-To get the current lunar phase emoji from the `LunarPhaseEmoji` enum (ex: "🌕")
+To get the current lunar phase emoji from the `LunarEmoji` enumeration (ex: "🌕"):
 
 ```js
 const phaseEmoji = Moon.lunarPhaseEmoji();
 ```
 
-To get emoji for other lunar phases of the `LunarPhase` enum:
+As phases are different between Northern and Southern Hemisphere, optionally pass a Hemisphere to the function:
+
+```js
+import { Moon } from "lunarphase-js";
+import { Hemisphere } from "lunarphase-js";
+
+const date = new Date();
+Moon.lunarPhaseEmoji(date, Hemisphere.Northern);
+```
+
+To get emoji for other lunar phases, pass a `LunarPhase` enumeration:
 
 ```js
 const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.Full);
 ```
+
+Optionally pass a Hemisphere to the function:
+
+```js
+import { Moon } from "lunarphase-js";
+import { LunarPhase } from "lunarphase-js";
+import { Hemisphere } from "lunarphase-js";
+
+Moon.emojiForLunarPhase(LunarPhase.FirstQuarter, Hemisphere.Southern);
+```
+
 
 ### Waxing
 
