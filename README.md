@@ -101,7 +101,7 @@ const phase = Moon.lunarPhase();
 
 ### Lunar Phase Emoji
 
-To get the current lunar phase emoji from the `LunarEmoji` enum (ex: "🌕"):
+To get the current lunar phase emoji from the `LunarEmoji` (ex: "🌕"):
 
 ```js
 const phaseEmoji = Moon.lunarPhaseEmoji();
