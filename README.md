@@ -2,7 +2,6 @@
 
 Calculate phase of the moon using Julian date.
 
-
 # Getting Started
 
 To install, execute:
@@ -15,10 +14,9 @@ Then, import into a project as:
 import { Moon } from "lunarphase-js";
 ```
 
-
 # Usage
 
-In the lunar calendar there are 8 phases each synodic month, which is the number of days to complete the cycle.  This time between two identical syzygies is equivalent to 29.53059 Earth days.
+In the lunar calendar there are 8 phases each synodic month, which is the number of days to complete the cycle. This time between two identical syzygies is equivalent to 29.53059 Earth days.
 
 Lunar phases, in order:
 
@@ -36,6 +34,13 @@ Lunar phases, in order:
 ## Julian Day
 
 Convert to and from Gregorian Dates to Julian Days via the `JulianDay` module.
+
+API Reference:
+
+| Function   | Output                   | Description                |
+| ---------- | ------------------------ | -------------------------- |
+| fromDate() | 2459357.5380029744       | Convert date to Julian Day |
+| toDate()   | 2021-05-23T05:56:10.418Z | Convert Julian Day to date |
 
 To convert a date to Julian Day:
 
@@ -55,9 +60,19 @@ const julian = 2459356.529302257;
 const date = JulianDay.toDate(julian);
 ```
 
-
 ## Lunar Phases
 
+API Reference:
+
+| Function   | Output             | Description                |
+| ---------- | ------------------ | -------------------------- |
+| lunarPhase() | Waxing Gibbous | Get lunar phase for a given date |
+| lunarPhaseEmoji() | 🌖 | Get emoji of lunar phase for a given date |
+| isWaxing() | true | Whether the moon is waxing |
+| isWaning() | false | Whether the moon is waning |
+| lunarAge() | 11.367344279004676 | Earth days since the last new moon |
+| lunarAgePercent() | 0.38497186542446116 | Percentage through the lunar synodic month |
+| lunationNumber() | 1217 | Brown Lunation Number (BLN) |
 
 For a specific date, pass a date object to a function
 
@@ -86,13 +101,13 @@ const phase = Moon.lunarPhase();
 
 ### Lunar Phase Emoji
 
-To get the current lunar phase emoji from the `LunarEmoji` enumeration (ex: "🌕"):
+To get the current lunar phase emoji from the `LunarEmoji` enum (ex: "🌕"):
 
 ```js
 const phaseEmoji = Moon.lunarPhaseEmoji();
 ```
 
-As phases are different between Northern and Southern Hemisphere, optionally pass a Hemisphere to the function:
+As phases are inverted between Northern and Southern Hemispheres, optionally pass a Hemisphere to the function:
 
 ```js
 import { Moon } from "lunarphase-js";
@@ -102,7 +117,7 @@ const date = new Date();
 Moon.lunarPhaseEmoji(date, Hemisphere.Northern);
 ```
 
-To get emoji for other lunar phases, pass a `LunarPhase` enumeration:
+To get emoji for other lunar phases, pass a `LunarPhase` enum:
 
 ```js
 const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.Full);
@@ -117,7 +132,6 @@ import { Hemisphere } from "lunarphase-js";
 
 Moon.emojiForLunarPhase(LunarPhase.FirstQuarter, Hemisphere.Southern);
 ```
-
 
 ### Waxing
 
