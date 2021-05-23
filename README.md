@@ -64,15 +64,15 @@ const date = JulianDay.toDate(julian);
 
 API Reference:
 
-| Function   | Output             | Description                |
-| ---------- | ------------------ | -------------------------- |
-| lunarPhase() | Waxing Gibbous | Get lunar phase for a given date |
-| lunarPhaseEmoji() | 🌖 | Get emoji of lunar phase for a given date |
-| isWaxing() | true | Whether the moon is waxing |
-| isWaning() | false | Whether the moon is waning |
-| lunarAge() | 11.367344279004676 | Earth days since the last new moon |
+| Function          | Output              | Description                                |
+| ----------------- | ------------------- | ------------------------------------------ |
+| lunarPhase()      | Waxing Gibbous      | Get lunar phase for a given date           |
+| lunarPhaseEmoji() | 🌖                  | Get emoji of lunar phase for a given date  |
+| isWaxing()        | true                | Whether the moon is waxing                 |
+| isWaning()        | false               | Whether the moon is waning                 |
+| lunarAge()        | 11.367344279004676  | Earth days since the last new moon         |
 | lunarAgePercent() | 0.38497186542446116 | Percentage through the lunar synodic month |
-| lunationNumber() | 1217 | Brown Lunation Number (BLN) |
+| lunationNumber()  | 1217                | Brown Lunation Number (BLN)                |
 
 For a specific date, pass a date object to a function
 
@@ -107,7 +107,7 @@ To get the current lunar phase emoji from the `LunarEmoji` enum (ex: "🌕"):
 const phaseEmoji = Moon.lunarPhaseEmoji();
 ```
 
-As phases are inverted between Northern and Southern Hemispheres, optionally pass a Hemisphere to the function:
+As phases are inverted between Northern and Southern Hemispheres, optionally pass a `Hemisphere` to the function:
 
 ```js
 import { Moon } from "lunarphase-js";
@@ -123,7 +123,7 @@ To get emoji for other lunar phases, pass a `LunarPhase` enum:
 const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.Full);
 ```
 
-Optionally pass a Hemisphere to the function:
+Optionally pass a `Hemisphere` to the function:
 
 ```js
 import { Moon } from "lunarphase-js";
