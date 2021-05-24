@@ -1,6 +1,6 @@
 export module Time {
   /**
-   * Timestamp epoch, January 1, 1970.
+   * Timestamp epoch, January 1, 1970, in Julian Days.
    */
   export const epoch: number = 2440587.5;
 

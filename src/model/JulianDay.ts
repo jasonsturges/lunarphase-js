@@ -1,3 +1,5 @@
+import { Time } from "../constants/Time";
+
 export module JulianDay {
   /**
    * Julian day from Gregorian date.
@@ -5,7 +7,7 @@ export module JulianDay {
    */
   export const fromDate = (date: Date = new Date()): number => {
     const time = date.getTime();
-    return time / 86400000 - date.getTimezoneOffset() / 1440 + 2440587.5;
+    return time / 86400000 - date.getTimezoneOffset() / 1440 + Time.epoch;
   };
 
   /**
@@ -14,7 +16,7 @@ export module JulianDay {
    */
   export const toDate = (julian: number): Date => {
     let date = new Date();
-    date.setTime((julian - 2440587.5 + date.getTimezoneOffset() / 1440) * 86400000);
+    date.setTime((julian - Time.epoch + date.getTimezoneOffset() / 1440) * 86400000);
     return date;
   };
 }

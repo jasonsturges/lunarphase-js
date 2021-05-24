@@ -6,7 +6,7 @@ import { Time } from "../constants/Time";
 
 export module Moon {
   /**
-   * Moon's age, or days since the last new moon.
+   * Moon's age, or Earth days since the last new moon.
    *
    * @param date - Date used for calculation.
    * @returns Age of the moon, normalized within a 29.53059 Earth days calendar.
