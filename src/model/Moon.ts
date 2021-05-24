@@ -1,9 +1,8 @@
 import { Hemisphere } from "../constants/Hemisphere";
 import { JulianDay } from "./JulianDay";
 import { LunarEmoji } from "../constants/LunarEmoji";
-import { LunarMonth } from "../constants/LunarMonth";
 import { LunarPhase } from "../constants/LunarPhase";
-import { LunationNumber } from "../constants/LunationNumber";
+import { Time } from "../constants/Time";
 
 export module Moon {
   /**
@@ -14,7 +13,7 @@ export module Moon {
    */
   export const lunarAge = (date: Date = new Date()): number => {
     const percent: number = lunarAgePercent(date);
-    return percent * LunarMonth.length;
+    return percent * Time.synodicMonthlength;
   };
 
   /**
@@ -24,7 +23,18 @@ export module Moon {
    * @returns Percentage through the lunar month.
    */
   export const lunarAgePercent = (date: Date = new Date()): number => {
-    return normalize((JulianDay.fromDate(date) - 2451550.1) / LunarMonth.length);
+    return normalize((JulianDay.fromDate(date) - 2451550.1) / Time.synodicMonthlength);
+  };
+
+  /**
+   * Brown Lunation Number (BLN), per Ernest William Brown's lunar theory,
+   * defining Lunation 1 as the first new moon of 1923 at
+   * approximately 02:41 UTC, January 17, 1923
+   *
+   * @param date
+   */
+  export const lunationNumber = (date = new Date()) => {
+    return Math.round((JulianDay.fromDate(date) - Time.lunationBaseJulianDay) / Time.synodicMonthlength) + 1;
   };
 
   /**
@@ -59,17 +69,6 @@ export module Moon {
     const phase: LunarPhase = lunarPhase(date);
 
     return emojiForLunarPhase(phase, hemisphere);
-  };
-
-  /**
-   * Brown Lunation Number (BLN), per Ernest William Brown's lunar theory,
-   * defining Lunation 1 as the first new moon of 1923 at
-   * approximately 02:41 UTC, January 17, 1923
-   *
-   * @param date
-   */
-  export const lunationNumber = (date = new Date()) => {
-    return Math.round((JulianDay.fromDate(date) - LunationNumber.baseLunationJulianDate) / LunarMonth.length) + 1;
   };
 
   /**
