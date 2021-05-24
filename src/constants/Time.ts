@@ -1,5 +1,10 @@
 export module Time {
   /**
+   * Timestamp epoch, January 1, 1970.
+   */
+  export const epoch: number = 2440587.5;
+
+  /**
    * Lunation 1 as the first new moon of 1923 at approximately
    * 02:41 UTC, January 17, 1923 per Ernest William Brown's lunar theory.
    */
