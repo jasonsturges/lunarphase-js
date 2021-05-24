@@ -53,7 +53,7 @@ export module Moon {
     else if (age < 16.61095558449) return LunarPhase.Full;
     else if (age < 20.30227904771) return LunarPhase.WaningGibbous;
     else if (age < 23.99360251093) return LunarPhase.LastQuarter;
-    else if (age < 27.53058770576) return LunarPhase.WaningCrescent;
+    else if (age < 27.68492597415) return LunarPhase.WaningCrescent;
 
     return LunarPhase.New;
   };
