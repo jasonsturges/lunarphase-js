@@ -151,6 +151,20 @@ const waning = Moon.isWaning();
 
 ### Lunar Age
 
+Age in Earth days through the current lunar cycle, equivalent to 29.53059 Earth days, based on Mean Synodic Month, 2000 AD mean solar days.
+
+| Phase           | Start          | Event          | End            |
+| --------------- | -------------- | -------------- | -------------- |
+| New             |                | 0              | 1.84566173161  |
+| Waxing Crescent | 1.84566173161  | 3.69132346322  | 5.53698519483  |
+| First Quarter   | 5.53698519483  | 7.38264692644  | 9.22830865805  |
+| Waxing Gibbous  | 9.22830865805  | 11.07397038966 | 12.91963212127 |
+| Full            | 12.91963212127 | 14.76529385288 | 16.61095558449 |
+| Waning Gibbous  | 16.61095558449 | 18.4566173161  | 20.30227904771 |
+| Last Quarter    | 20.30227904771 | 22.14794077932 | 23.99360251093 |
+| Waning Crescent | 23.99360251093 | 25.83926424254 | 27.68492597415 |
+| New             | 27.68492597415 | 29.53058770576 |                |
+
 To get the lunar age (ex: 16.54412413414952)
 
 ```js
