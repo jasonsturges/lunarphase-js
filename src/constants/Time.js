@@ -15,6 +15,12 @@ export const LUNATION_BASE_JULIAN_DAY = 2423436.6115277777;
 export const PHASE_LENGTH = 3.69132346322;
 
 /**
+ * Orbital period of the Moon from perigee to apogee and back to perigee
+ * @type {number}
+ */
+export const ANOMALISTIC_MONTH = 27.55454988;
+
+/**
  * Length of one synodic month, or days for the phases to complete a cycle.
  * Time between two identical syzygies, equivalent of 29.53059 Earth days.
  *

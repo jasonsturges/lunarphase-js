@@ -1,7 +1,7 @@
+import { ANOMALISTIC_MONTH, LUNATION_BASE_JULIAN_DAY, SYNODIC_MONTH } from "./constants/Time";
 import { Hemisphere } from "./constants/Hemisphere";
 import { LunarEmoji } from "./constants/LunarEmoji";
 import { LunarPhase } from "./constants/LunarPhase";
-import { LUNATION_BASE_JULIAN_DAY, SYNODIC_MONTH } from "./constants/Time";
 import { normalize } from "./utils/MathUtil";
 import * as JulianDay from "./JulianDay";
 
@@ -49,7 +49,7 @@ export const lunarDistance = (date = new Date()) => {
   const julian = JulianDay.fromDate(date);
   const agePercent = lunarAgePercent(date);
   const radians = agePercent * 2 * Math.PI;
-  const percent = 2 * Math.PI * normalize((julian - 2451562.2) / 27.55454988);
+  const percent = 2 * Math.PI * normalize((julian - 2451562.2) / ANOMALISTIC_MONTH);
 
   return 60.4 - 3.3 * Math.cos(percent) - 0.6 * Math.cos(2 * radians - percent) - 0.5 * Math.cos(2 * radians);
 };
