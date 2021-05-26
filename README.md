@@ -64,15 +64,16 @@ const date = JulianDay.toDate(julian);
 
 API Reference:
 
-| Function          | Output              | Description                                |
-| ----------------- | ------------------- | ------------------------------------------ |
-| lunarPhase()      | Waxing Gibbous      | Get lunar phase for a given date           |
-| lunarPhaseEmoji() | 🌖                  | Get emoji of lunar phase for a given date  |
-| isWaxing()        | true                | Whether the moon is waxing                 |
-| isWaning()        | false               | Whether the moon is waning                 |
-| lunarAge()        | 11.367344279004676  | Earth days since the last new moon         |
-| lunarAgePercent() | 0.38497186542446116 | Percentage through the lunar synodic month |
-| lunationNumber()  | 1217                | Brown Lunation Number (BLN)                |
+| Function          | Output              | Description                                           |
+| ----------------- | ------------------- | ----------------------------------------------------- |
+| lunarPhase()      | Waxing Gibbous      | Get lunar phase for a given date                      |
+| lunarPhaseEmoji() | 🌖                  | Get emoji of lunar phase for a given date             |
+| isWaxing()        | true                | Whether the moon is waxing                            |
+| isWaning()        | false               | Whether the moon is waning                            |
+| lunarAge()        | 11.367344279004676  | Earth days since the last new moon                    |
+| lunarAgePercent() | 0.38497186542446116 | Percentage through the lunar synodic month            |
+| lunarDistance()   | 56.04166690080031   | Distance to the moon measured in units of Earth radii |
+| lunationNumber()  | 1217                | Brown Lunation Number (BLN)                           |
 
 For a specific date, pass a date object to a function
 
@@ -185,4 +186,12 @@ Brown Lunation Number (BLN), per Ernest William Brown's lunar theory, defining L
 
 ```js
 const lunationNumber = Moon.lunationNumber();
+```
+
+### Lunar Distance
+
+Distance to the moon measured in units of Earth radii, with perigee at 56 and apogee at 63.8.
+
+```js
+const distance = Moon.lunarDistance();
 ```
