@@ -29,7 +29,7 @@ export const lunarAgePercent = (date = new Date()) => {
 /**
  * Brown Lunation Number (BLN), per Ernest William Brown's lunar theory,
  * defining Lunation 1 as the first new moon of 1923 at
- * approximately 02:41 UTC, January 17, 1923
+ * approximately 02:41 UTC, January 17, 1923.
  *
  * @param {Date} date Date used for calculation.
  * @returns {number} Lunation Number
@@ -89,7 +89,7 @@ export const lunarPhaseEmoji = (date = new Date(), hemisphere = Hemisphere.NORTH
 };
 
 /**
- * Emoji for specified lunar phase
+ * Emoji for specified lunar phase.
  *
  * @param {LunarPhase} phase Lunar phase, per the LunarPhase enum
  * @param {Hemisphere} hemisphere Northern or Southern Hemisphere.
