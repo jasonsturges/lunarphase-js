@@ -1,5 +1,6 @@
 /**
  * Earth's hemispheres.
+ *
  * @typedef {string} Hemisphere
  * @enum {Hemisphere}
  */

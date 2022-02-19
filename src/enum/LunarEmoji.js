@@ -1,5 +1,6 @@
 /**
- * Enumeration of lunar phases as emoji.
+ * Enumeration of lunar phases as emoji
+ *
  * @typedef {string} LunarEmoji
  */
 export const LunarEmoji = {

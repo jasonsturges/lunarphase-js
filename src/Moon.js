@@ -1,7 +1,7 @@
 import { ANOMALISTIC_MONTH, LUNATION_BASE_JULIAN_DAY, SYNODIC_MONTH } from "./constants/Time";
-import { Hemisphere } from "./constants/Hemisphere";
-import { LunarEmoji } from "./constants/LunarEmoji";
-import { LunarPhase } from "./constants/LunarPhase";
+import { Hemisphere } from "./enum/Hemisphere";
+import { LunarEmoji } from "./enum/LunarEmoji";
+import { LunarPhase } from "./enum/LunarPhase";
 import { normalize } from "./utils/MathUtil";
 import * as JulianDay from "./JulianDay";
 
