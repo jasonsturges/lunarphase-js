@@ -24,17 +24,25 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "predocs": "rimraf ./docs",
-    "docs": "jsdoc -r src/*s -R README.md -d ./docs",
-    "clean": "rimraf ./dist ./docs",
+    "prebuild:types": "rimraf ./build",
+    "build:types": "tsc -p ./tsconfig.json --outDir build && api-extractor run",
+    "predoc:jsdoc": "rimraf ./docs",
+    "docs:jsdoc": "jsdoc -r src/*s -R README.md -d ./docs",
+    "predoc:typedoc": "rimraf ./docs",
+    "docs:typedoc": "typedoc src --out docs",
+    "clean": "rimraf ./build ./dist ./docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "eslint": "^7.26.0",
-    "prettier": "^2.3.0",
+    "@microsoft/api-extractor": "^7.19.4",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "eslint": "^8.9.0",
+    "jsdoc": "^3.6.10",
+    "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.48.0"
+    "rollup": "^2.67.2",
+    "typedoc": "^0.22.11",
+    "typescript": "^4.5.5"
   }
 }
