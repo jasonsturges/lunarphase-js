@@ -24,7 +24,7 @@ export const PHASE_LENGTH = 3.69132346322;
 export const ANOMALISTIC_MONTH = 27.55454988;
 
 /**
- * Length of one synodic month, or days for the phases to complete a cycle.
+ * Length of one synodic month - lunation, or days for the phases to complete a cycle.
  * Time between two identical syzygies, equivalent of 29.53059 Earth days.
  *
  * Based on Mean Synodic Month, 2000 AD mean solar days.
