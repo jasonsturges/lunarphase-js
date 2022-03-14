@@ -99,9 +99,9 @@ export const emojiForLunarPhase = (phase, hemisphere = Hemisphere.NORTHERN) => {
   let emoji;
 
   if (hemisphere === Hemisphere.SOUTHERN) {
-    emoji = LunarEmoji.NorthernHemisphere;
-  } else {
     emoji = LunarEmoji.SouthernHemisphere;
+  } else {
+    emoji = LunarEmoji.NorthernHemisphere;
   }
 
   switch (phase) {
