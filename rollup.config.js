@@ -10,9 +10,10 @@ export default [
       name: "LunarPhase",
       file: pkg.browser,
       format: "umd",
+      sourcemap: true,
     },
     plugins: [
-      resolve(),
+      resolve(), //
       commonjs(),
     ],
   },
@@ -21,8 +22,8 @@ export default [
   {
     input: "src/index.js",
     output: [
-      { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "es" },
-    ]
+      { file: pkg.main, format: "cjs", sourcemap: true },
+      { file: pkg.module, format: "es", sourcemap: true },
+    ],
   },
 ];
