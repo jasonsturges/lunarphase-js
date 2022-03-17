@@ -15,9 +15,9 @@
     "lunar",
     "phase"
   ],
-  "main": "dist/lunarphase-js.cjs.js",
-  "module": "dist/lunarphase-js.esm.js",
-  "browser": "dist/lunarphase-js.umd.js",
+  "main": "dist/cjs/lunarphase-js.js",
+  "module": "dist/esm/lunarphase-js.js",
+  "browser": "dist/browser/lunarphase-js..js",
   "files": [
     "dist"
   ],
