@@ -34,11 +34,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint": "^8.9.0",
-    "jsdoc": "^3.6.10",
-    "prettier": "^2.5.1",
+    "eslint": "^8.30.0",
+    "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
-    "typedoc": "^0.22.11",
-    "typescript": "^4.5.5"
+    "typedoc": "^0.23.23",
+    "typescript": "^4.9.4"
   }
 }
