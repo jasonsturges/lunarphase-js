@@ -15,15 +15,17 @@
     "lunar",
     "phase"
   ],
-  "main": "dist/cjs/lunarphase-js.js",
-  "module": "dist/esm/lunarphase-js.js",
-  "browser": "dist/browser/lunarphase-js..js",
+  "main": "dist/index.cjs.ja",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
+    "start": "vite --host --open",
+    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "watch": "tsc && vite build --watch",
+    "lint:scripts": "eslint . --ext .ts",
     "docs": "typedoc src --out docs",
     "clean": "rimraf ./build ./dist ./docs"
   },
