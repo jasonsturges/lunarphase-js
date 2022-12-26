@@ -24,14 +24,8 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "prebuild:types": "rimraf ./build",
-    "build:types": "tsc -p ./tsconfig.json --outDir build && api-extractor run",
-    "predoc:jsdoc": "rimraf ./docs",
-    "docs:jsdoc": "jsdoc -r src/*s -R README.md -d ./docs",
-    "predoc:typedoc": "rimraf ./docs",
-    "docs:typedoc": "typedoc src --out docs",
-    "clean": "rimraf ./build ./dist ./docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "typedoc src --out docs",
+    "clean": "rimraf ./build ./dist ./docs"
   },
   "devDependencies": {
     "eslint": "^8.30.0",
