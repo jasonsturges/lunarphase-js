@@ -1,6 +1,10 @@
 # Lunar phase
-
 Calculate phase of the moon using Julian date.
+  
+<p align="center">
+  <img src="https://github.com/jasonsturges/lunarphase-js/raw/main/public/moon.png" width="256px" height="auto" />
+</p>
+
 
 # Getting Started
 
@@ -8,11 +12,14 @@ To install, execute:
 
     npm i lunarphase-js
 
-Then, import into a project as:
+Then, import into a project and use as:
 
 ```js
 import { Moon } from "lunarphase-js";
+
+Moon.lunarPhase();
 ```
+
 
 # Usage
 
@@ -31,38 +38,10 @@ Lunar phases, in order:
 | Last Quarter    | 🌗                  | 🌓                  |
 | Waning Crescent | 🌘                  | 🌒                  |
 
-## Julian Day
 
-Convert to and from Gregorian Dates to Julian Days via the `JulianDay` module.
 
-API Reference:
+# API Reference:
 
-| Function   | Output                   | Description                |
-| ---------- | ------------------------ | -------------------------- |
-| fromDate() | 2459357.5380029744       | Convert date to Julian Day |
-| toDate()   | 2021-05-23T05:56:10.418Z | Convert Julian Day to date |
-
-To convert a date to Julian Day:
-
-```js
-import { JulianDay } from "lunarphase-js";
-
-const date = new Date();
-const julian = JulianDay.fromDate(date);
-```
-
-To convert a Julian Day to a date:
-
-```js
-import { JulianDay } from "lunarphase-js";
-
-const julian = 2459356.529302257;
-const date = JulianDay.toDate(julian);
-```
-
-## Lunar Phases
-
-API Reference:
 
 | Function          | Output              | Description                                           |
 | ----------------- | ------------------- | ----------------------------------------------------- |
@@ -100,6 +79,7 @@ To get the current lunar phase from the `LunarPhase` enum (ex: "FULL")
 const phase = Moon.lunarPhase();
 ```
 
+
 ### Lunar Phase Emoji
 
 To get the current lunar phase emoji from the `LunarEmoji` (ex: "🌕"):
@@ -108,31 +88,36 @@ To get the current lunar phase emoji from the `LunarEmoji` (ex: "🌕"):
 const phaseEmoji = Moon.lunarPhaseEmoji();
 ```
 
-As phases are inverted between Northern and Southern Hemispheres, optionally pass a `Hemisphere` to the function:
+As phases are inverted between Northern and Southern Hemispheres, optionally pass `Hemisphere` options.
 
 ```js
-import { Moon } from "lunarphase-js";
-import { Hemisphere } from "lunarphase-js";
+import { Hemisphere, Moon } from "lunarphase-js";
 
 const date = new Date();
-Moon.lunarPhaseEmoji(date, Hemisphere.NORTHERN);
+Moon.lunarPhaseEmoji(date, {
+  hemisphere: Hemisphere.SOUTHERN,
+});
 ```
 
 To get emoji for other lunar phases, pass a `LunarPhase` enum:
 
 ```js
-const emoji = Moon.emojiForLunarPhase(Moon.LunarPhase.Full);
+import { LunarPhase, Moon } from "lunarphase-js";
+
+const emoji = Moon.emojiForLunarPhase(LunarPhase.FULL);
 ```
 
 Optionally pass a `Hemisphere` to the function:
 
 ```js
-import { Moon } from "lunarphase-js";
-import { LunarPhase } from "lunarphase-js";
-import { Hemisphere } from "lunarphase-js";
+import { Hemisphere, LunarPhase, Moon } from "lunarphase-js";
 
-Moon.emojiForLunarPhase(LunarPhase.FIRST_QUARTER, Hemisphere.SOUTHERN);
+const emoji = Moon.emojiForLunarPhase(LunarPhase.FULL, {
+  hemisphere: Hemisphere.SOUTHERN,
+});
+
 ```
+
 
 ### Waxing
 
@@ -142,6 +127,7 @@ Whether the moon is waxing (ex: false)
 const waxing = Moon.isWaxing();
 ```
 
+
 ### Waning
 
 Whether the moon is waning (ex: true)
@@ -149,6 +135,7 @@ Whether the moon is waning (ex: true)
 ```js
 const waning = Moon.isWaning();
 ```
+
 
 ### Lunar Age
 
@@ -172,6 +159,7 @@ To get the lunar age (ex: 16.54412413414952)
 const age = Moon.lunarAge();
 ```
 
+
 ### Lunar Age Percent
 
 To get the percentage through the lunar cycle (ex: 0.5602368519132597)
@@ -179,6 +167,7 @@ To get the percentage through the lunar cycle (ex: 0.5602368519132597)
 ```js
 const agePercent = Moon.lunarAgePercent();
 ```
+
 
 ### Lunation Number
 
@@ -188,10 +177,41 @@ Brown Lunation Number (BLN), per Ernest William Brown's lunar theory, defining L
 const lunationNumber = Moon.lunationNumber();
 ```
 
+
 ### Lunar Distance
 
 Distance to the moon measured in units of Earth radii, with perigee at 56 and apogee at 63.8.
 
 ```js
 const distance = Moon.lunarDistance();
+```
+
+
+## Julian Day
+
+Convert to and from Gregorian Dates to Julian Days via the `JulianDay` module.
+
+API Reference:
+
+| Function   | Output                   | Description                |
+| ---------- | ------------------------ | -------------------------- |
+| fromDate() | 2459357.5380029744       | Convert date to Julian Day |
+| toDate()   | 2021-05-23T05:56:10.418Z | Convert Julian Day to date |
+
+To convert a date to Julian Day:
+
+```js
+import { JulianDay } from "lunarphase-js";
+
+const date = new Date();
+const julian = JulianDay.fromDate(date);
+```
+
+To convert a Julian Day to a date:
+
+```js
+import { JulianDay } from "lunarphase-js";
+
+const julian = 2459356.529302257;
+const date = JulianDay.toDate(julian);
 ```
