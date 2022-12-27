@@ -15,34 +15,33 @@
     "lunar",
     "phase"
   ],
-  "main": "dist/cjs/lunarphase-js.js",
-  "module": "dist/esm/lunarphase-js.js",
-  "browser": "dist/browser/lunarphase-js..js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "prebuild:types": "rimraf ./build",
-    "build:types": "tsc -p ./tsconfig.json --outDir build && api-extractor run",
-    "predoc:jsdoc": "rimraf ./docs",
-    "docs:jsdoc": "jsdoc -r src/*s -R README.md -d ./docs",
-    "predoc:typedoc": "rimraf ./docs",
-    "docs:typedoc": "typedoc src --out docs",
-    "clean": "rimraf ./build ./dist ./docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite --host --open",
+    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "watch": "tsc && vite build --watch",
+    "lint:scripts": "eslint . --ext .ts",
+    "docs": "typedoc src --out docs",
+    "clean": "rimraf ./build ./dist ./docs"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.19.4",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "eslint": "^8.9.0",
-    "jsdoc": "^3.6.10",
-    "prettier": "^2.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "dts-bundle-generator": "^7.1.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.67.2",
-    "typedoc": "^0.22.11",
-    "typescript": "^4.5.5"
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "typedoc": "^0.23.23",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3"
   }
 }

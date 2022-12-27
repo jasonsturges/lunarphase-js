@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/moon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon Lunar Phase</title>
+  <style>
+    body {
+      font-family: "Roboto", "Helvetica", "sans-serif";
+      margin: 50px auto;
+    }
+    table {
+      margin: 50px auto;
+    }
+    td:first-child {
+      width: 150px;
+    }
+    td:nth-child(2) {
+      font-family: "Courier", "Menlo", "Consolas", "Monaco", "monospace";
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <table>
+    <tr>
+      <td>julianDay</td>
+      <td><span id="julianDay" /></td>
+    </tr>
+    <tr>
+      <td>lunarAge</td>
+      <td><span id="lunarAge" /></td>
+    </tr>
+    <tr>
+      <td>lunarAgePercent</td>
+      <td><span id="lunarAgePercent" /></td>
+    </tr>
+    <tr>
+      <td>lunarPhase</td>
+      <td><span id="lunarPhase"></span></td>
+    </tr>
+    <tr>
+      <td>lunarPhaseEmoji</td>
+      <td><span id="lunarPhaseEmoji"></span></td>
+    </tr>
+    <tr>
+      <td>lunationNumber</td>
+      <td><span id="lunationNumber"></span></td>
+    </tr>
+    <tr>
+      <td>lunarDistance</td>
+      <td><span id="lunarDistance"></span></td>
+    </tr>
+    <tr>
+      <td>isWaning</td>
+      <td><span id="isWaning"></span></td>
+    </tr>
+    <tr>
+      <td>isWaxing</td>
+      <td><span id="isWaxing"></span></td>
+    </tr>
+  </table>
+</main>
+<script type="module" src="/index.js"></script>
+</body>
+</html>
