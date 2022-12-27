@@ -8,7 +8,7 @@ import {
   lunarPhaseEmoji,
   lunationNumber,
 } from "./src/Moon";
-import { fromDate } from "./src/JulianDay";
+import { fromDate } from "./src/Julian";
 
 setInterval(() => {
   document.querySelector("#julianDay").innerHTML = fromDate().toFixed(10);

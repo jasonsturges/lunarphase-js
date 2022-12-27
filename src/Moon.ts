@@ -1,4 +1,4 @@
-import * as JulianDay from "./JulianDay";
+import * as Julian from "./Julian";
 import { ANOMALISTIC_MONTH, LUNATION_BASE_JULIAN_DAY, SYNODIC_MONTH } from "./constants/Time";
 import { Hemisphere } from "./constants/Hemisphere";
 import { LunarPhase } from "./constants/LunarPhase";
@@ -20,7 +20,7 @@ export const lunarAge = (date = new Date()) => {
  * Percentage through the lunar synodic month.
  */
 export const lunarAgePercent = (date = new Date()) => {
-  return normalize((JulianDay.fromDate(date) - 2451550.1) / SYNODIC_MONTH);
+  return normalize((Julian.fromDate(date) - 2451550.1) / SYNODIC_MONTH);
 };
 
 /**
@@ -29,7 +29,7 @@ export const lunarAgePercent = (date = new Date()) => {
  * approximately 02:41 UTC, January 17, 1923.
  */
 export const lunationNumber = (date = new Date()) => {
-  return Math.round((JulianDay.fromDate(date) - LUNATION_BASE_JULIAN_DAY) / SYNODIC_MONTH) + 1;
+  return Math.round((Julian.fromDate(date) - LUNATION_BASE_JULIAN_DAY) / SYNODIC_MONTH) + 1;
 };
 
 /**
@@ -37,7 +37,7 @@ export const lunationNumber = (date = new Date()) => {
  * perigee at 56 and apogee at 63.8.
  */
 export const lunarDistance = (date = new Date()) => {
-  const julian = JulianDay.fromDate(date);
+  const julian = Julian.fromDate(date);
   const agePercent = lunarAgePercent(date);
   const radians = agePercent * 2 * Math.PI;
   const percent = 2 * Math.PI * normalize((julian - 2451562.2) / ANOMALISTIC_MONTH);
