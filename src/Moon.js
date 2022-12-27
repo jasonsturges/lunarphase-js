@@ -147,3 +147,44 @@ export const isWaning = (date = new Date()) => {
   const age = lunarAge(date);
   return age > 14.765;
 };
+
+/**
+ * Whether the moon is equal to the given phase.
+ *
+ * @param {LunarPhase} phase Lunar phase, per the LunarPhase enum
+ * @param {Date} date Date used for calculation.
+ * @returns {boolean} True if moon is in the phase on the given date.
+ */
+ export const isLunarPhase = (phase, date = new Date()) => {
+  return phase === lunarPhase(date);
+};
+
+/**
+ * The date of the next lunar phase.
+ *
+ * @param {LunarPhase} phase Lunar phase, per the LunarPhase enum
+ * @param {Date} date Starting date used for calculation.
+ * @returns {Date} Date of next lunar phase
+ */
+
+export const nextLunarPhase = (phase, date = new Date()) => {
+  while (!isLunarPhase(phase, date)) {
+    date.setDate(date.getDate() + 1);
+  }
+  return date;
+};
+
+/**
+ * The date of the previous lunar phase.
+ *
+ * @param {LunarPhase} phase Lunar phase, per the LunarPhase enum
+ * @param {Date} date Starting date used for calculation.
+ * @returns {Date} Date of previous lunar phase
+ */
+
+export const previousLunarPhase = (phase, date = new Date()) => {
+  while (!isLunarPhase(phase, date)) {
+    date.setDate(date.getDate() - 1);
+  }
+  return date;
+};
