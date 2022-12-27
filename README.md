@@ -20,6 +20,13 @@ import { Moon } from "lunarphase-js";
 Moon.lunarPhase();
 ```
 
+This package provides for following distributables:
+- CJS: CommonJS
+- ESM: ES Modules 
+- UMD: Universal Module Definition (browser)
+- IIFE: Immediately invoked function expression
+- TypeScript declaration types
+
 
 # Usage
 
@@ -39,9 +46,9 @@ Lunar phases, in order:
 | Waning Crescent | 🌘                  | 🌒                  |
 
 
-
 # API Reference:
 
+The following functions are exported from `Moon`:
 
 | Function          | Output              | Description                                           |
 | ----------------- | ------------------- | ----------------------------------------------------- |
@@ -54,7 +61,9 @@ Lunar phases, in order:
 | lunarDistance()   | 56.04166690080031   | Distance to the moon measured in units of Earth radii |
 | lunationNumber()  | 1217                | Brown Lunation Number (BLN)                           |
 
-For a specific date, pass a date object to a function
+Visit this repository's GitHub Pages for a live example: https://jasonsturges.github.io/lunarphase-js/
+
+All functions default to the current date; otherwise, pass a date object to each function for a specific date.
 
 ```js
 import { Moon } from "lunarphase-js";
@@ -70,6 +79,7 @@ import { Moon } from "lunarphase-js";
 
 const phase = Moon.lunarPhase();
 ```
+
 
 ### Lunar Phase
 
