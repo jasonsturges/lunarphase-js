@@ -27,7 +27,7 @@
     "watch": "tsc && vite build --watch",
     "lint:scripts": "eslint . --ext .ts",
     "docs": "typedoc src --out docs",
-    "clean": "rimraf ./build ./dist ./docs"
+    "clean": "rimraf ./dist ./docs"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.47.1",
