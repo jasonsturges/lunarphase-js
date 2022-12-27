@@ -197,9 +197,9 @@ const distance = Moon.lunarDistance();
 ```
 
 
-## Julian Day
+## Julian
 
-Convert to and from Gregorian Dates to Julian Days via the `JulianDay` module.
+Convert to and from Gregorian Dates to Julian Days via the `Julian` module.
 
 API Reference:
 
@@ -208,20 +208,20 @@ API Reference:
 | fromDate() | 2459357.5380029744       | Convert date to Julian Day |
 | toDate()   | 2021-05-23T05:56:10.418Z | Convert Julian Day to date |
 
-To convert a date to Julian Day:
+To convert a date to Julian day:
 
 ```js
-import { JulianDay } from "lunarphase-js";
+import { Julian } from "lunarphase-js";
 
 const date = new Date();
-const julian = JulianDay.fromDate(date);
+const julian = Julian.fromDate(date);
 ```
 
-To convert a Julian Day to a date:
+To convert a Julian day to a date:
 
 ```js
-import { JulianDay } from "lunarphase-js";
+import { Julian } from "lunarphase-js";
 
 const julian = 2459356.529302257;
-const date = JulianDay.toDate(julian);
+const date = Julian.toDate(julian);
 ```
