@@ -3,7 +3,6 @@ export { NorthernHemisphereLunarEmoji, SouthernHemisphereLunarEmoji } from "./co
 export { LunarMonth } from "./constants/LunarMonth";
 export { LunarPhase } from "./constants/LunarPhase";
 export type { MoonOptions } from "./MoonOptions";
+export { Julian } from "./Julian";
+export { Moon } from "./Moon";
 export { Unit } from "./constants/Unit";
-export * as Julian from "./Julian";
-export * as Moon from "./Moon";
-export * as Time from "./constants/Time";
