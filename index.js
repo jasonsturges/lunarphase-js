@@ -1,23 +1,14 @@
-import {
-  isWaning,
-  isWaxing,
-  lunarAge,
-  lunarAgePercent,
-  lunarDistance,
-  lunarPhase,
-  lunarPhaseEmoji,
-  lunationNumber,
-} from "./src/Moon";
-import { fromDate } from "./src/Julian";
+import { Moon } from "./src";
+import { Julian } from "./src";
 
 setInterval(() => {
-  document.querySelector("#julianDay").innerHTML = fromDate().toFixed(10);
-  document.querySelector("#lunarAge").innerHTML = lunarAge().toFixed(10);
-  document.querySelector("#lunarAgePercent").innerHTML = lunarAgePercent().toFixed(10);
-  document.querySelector("#lunationNumber").innerHTML = lunationNumber();
-  document.querySelector("#lunarDistance").innerHTML = lunarDistance().toFixed(10);
-  document.querySelector("#lunarPhase").innerHTML = lunarPhase();
-  document.querySelector("#lunarPhaseEmoji").innerHTML = lunarPhaseEmoji();
-  document.querySelector("#isWaxing").innerHTML = isWaxing();
-  document.querySelector("#isWaning").innerHTML = isWaning();
+  document.querySelector("#julianDay").innerHTML = Julian.fromDate().toFixed(10);
+  document.querySelector("#lunarAge").innerHTML = Moon.lunarAge().toFixed(10);
+  document.querySelector("#lunarAgePercent").innerHTML = Moon.lunarAgePercent().toFixed(10);
+  document.querySelector("#lunationNumber").innerHTML = Moon.lunationNumber().toFixed(0);
+  document.querySelector("#lunarDistance").innerHTML = Moon.lunarDistance().toFixed(10);
+  document.querySelector("#lunarPhase").innerHTML = Moon.lunarPhase();
+  document.querySelector("#lunarPhaseEmoji").innerHTML = Moon.lunarPhaseEmoji();
+  document.querySelector("#isWaxing").innerHTML = Moon.isWaxing();
+  document.querySelector("#isWaning").innerHTML = Moon.isWaning();
 }, 33);
