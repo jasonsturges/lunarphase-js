@@ -17,7 +17,7 @@ Then, import into a project and use as:
 ```js
 import { Moon } from "lunarphase-js";
 
-Moon.lunarPhase();
+const phase = Moon.lunarPhase();
 ```
 
 This package provides for following distributables:
