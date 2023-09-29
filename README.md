@@ -63,21 +63,21 @@ The following functions are exported from `Moon`:
 
 Visit this repository's GitHub Pages for a live example: https://jasonsturges.github.io/lunarphase-js/
 
-All functions default to the current date; otherwise, pass a date object to each function for a specific date.
+All functions default to the current date, as in "now":
+
+```js
+import { Moon } from "lunarphase-js";
+
+const phase = Moon.lunarPhase();
+```
+
+Otherwise, pass a date object to each function for a specific date.
 
 ```js
 import { Moon } from "lunarphase-js";
 
 const date = new Date();
 const phase = Moon.lunarPhase(date);
-```
-
-Otherwise, current date will be used
-
-```js
-import { Moon } from "lunarphase-js";
-
-const phase = Moon.lunarPhase();
 ```
 
 
