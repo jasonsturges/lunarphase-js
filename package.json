@@ -25,7 +25,6 @@
     "start": "vite --host --open",
     "build": "tsc && vite build",
     "lint:scripts": "eslint . --ext .ts",
-    "docs": "typedoc src --out docs",
     "clean": "rimraf ./dist ./docs"
   },
   "devDependencies": {
@@ -39,7 +38,6 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
-    "typedoc": "^0.25.9",
     "typescript": "^5.3.3",
     "vite": "^5.1.4",
     "vite-plugin-dts": "^3.7.3"
