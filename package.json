@@ -7,7 +7,8 @@
   "repository": "github:jasonsturges/lunarphase-js",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "scope": "jasonsturges"
   },
   "license": "ISC",
   "keywords": [
