@@ -1,5 +1,5 @@
 import path from "path";
-import { defineConfig } from "vite";
+import { defineConfig, UserConfig } from "vite";
 
 export default defineConfig({
   base: "./",
@@ -19,4 +19,4 @@ export default defineConfig({
       },
     },
   },
-});
+} satisfies UserConfig);
