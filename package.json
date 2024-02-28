@@ -5,6 +5,10 @@
   "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
   "homepage": "https://jasonsturges.github.io/lunarphase-js/",
   "repository": "github:jasonsturges/lunarphase-js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "ISC",
   "keywords": [
     "astronomy",
