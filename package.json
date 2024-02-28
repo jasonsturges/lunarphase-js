@@ -39,10 +39,10 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.4.1",
-    "typedoc": "^0.23.23",
-    "typescript": "^4.9.4",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.9",
+    "typescript": "^5.3.3",
     "vite": "^4.0.3"
   }
 }
