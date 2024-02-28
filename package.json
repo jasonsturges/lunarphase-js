@@ -24,6 +24,7 @@
     "dev": "tsc && vite build --watch",
     "start": "vite --host --open",
     "build": "tsc && vite build",
+    "build:demo": "tsc && vite build --config vite.demo.config.ts",
     "lint:scripts": "eslint . --ext .ts",
     "clean": "rimraf ./dist ./docs"
   },
