@@ -1,7 +1,7 @@
 import { Moon } from "./src";
 import { Julian } from "./src";
 
-setInterval(() => {
+const update = () => {
   document.querySelector("#julianDay").innerHTML = Julian.fromDate().toFixed(10);
   document.querySelector("#lunarAge").innerHTML = Moon.lunarAge().toFixed(10);
   document.querySelector("#lunarAgePercent").innerHTML = Moon.lunarAgePercent().toFixed(10);
@@ -11,4 +11,6 @@ setInterval(() => {
   document.querySelector("#lunarPhaseEmoji").innerHTML = Moon.lunarPhaseEmoji();
   document.querySelector("#isWaxing").innerHTML = Moon.isWaxing();
   document.querySelector("#isWaning").innerHTML = Moon.isWaning();
-}, 33);
+  requestAnimationFrame(update);
+};
+update();
