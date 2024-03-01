@@ -11,7 +11,10 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "lunarphase",
       formats: ["es", "cjs", "umd", "iife"],
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => {
+        const fileName = `index.${format}`;
+        return format === "cjs" ? fileName : `${fileName}.js`;
+      },
     },
     rollupOptions: {
       external: [],
